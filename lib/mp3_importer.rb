@@ -1,3 +1,4 @@
+require 'pry'
 class MP3Importer
 attr_accessor :path
 
@@ -9,6 +10,7 @@ attr_accessor :path
     files = []
     filenames = []
     files = Dir.new(self.path).each {|file| files << file if file == '*.mp3'}
+    pry
     files.each {|file| filenames << file.split('mp3s/')[1]}
     filenames
   end
