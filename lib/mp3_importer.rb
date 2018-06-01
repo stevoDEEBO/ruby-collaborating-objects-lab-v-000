@@ -16,6 +16,8 @@ attr_accessor :path
   end
 
   def import
-    Song.new_by_filename(@mp3s_without_path)
+    @mp3s_without_path.each do |filename|
+      Song.new_by_filename(filename)
+    end
   end
 end
