@@ -9,11 +9,11 @@ attr_accessor :path
 
   def files
     #@mp3s_without_path = []
-    @mp3s = Dir["./spec/fixtures/mp3s/*.mp3"].each {|file| @mp3s << file}
-    @mp3s.each do |mp3|
-      @mp3s_without_path << mp3.split("mp3s/")[1]
-    end
-    @mp3s_without_path
+    files = []
+    filename = []
+    files = Dir[self.path].each {|file| files << file}
+    files.each {|file| filenames << file.split("mp3s/")[1]}
+    filenames
   end
 
   def import
