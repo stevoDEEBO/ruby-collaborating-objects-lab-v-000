@@ -8,8 +8,8 @@ attr_accessor :path
   def files
     files = []
     filenames = []
-    files = Dir.new(self.path).each {|file| files << file if file.length > 4}# == '*.mp3'}
-    files.each {|file| filenames << file.split("mp3s/")[1]}
+    files = Dir.new(self.path).each {|file| files << file if file == '*.mp3'}
+    files.each {|file| filenames << file.split('mp3s/')[1]}
     filenames
   end
 
