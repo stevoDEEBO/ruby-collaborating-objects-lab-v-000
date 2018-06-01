@@ -8,7 +8,7 @@ attr_accessor :path
   def files
     #@mp3s_without_path = []
     files = []
-    @filenames = []
+    filenames = []
     files = Dir[self.path].each {|file| files << file}
     files.each {|file| filenames << file.split("mp3s/")[1]}
     filenames
