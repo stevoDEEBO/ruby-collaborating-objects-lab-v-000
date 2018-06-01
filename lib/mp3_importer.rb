@@ -10,10 +10,10 @@ attr_accessor :path
     files = []
     filenames = []
     files = Dir.new(self.path).each {|file| files << file if file == '*.mp3'}
-    pry
     files.each {|file| filenames << file.split('mp3s/')[1]}
     filenames
   end
+  pry
 
   def import
     self.files.each {|filename| Song.new_by_filename(filename)}
